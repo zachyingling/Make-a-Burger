@@ -1,14 +1,14 @@
 const express = require("express");
+const path = require("path");
 const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-app.use(express.static("public"));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars.
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -21,5 +21,3 @@ app.use(routes);
 app.listen(PORT, () => {
   console.log("Server listening.");
 });
-
-module.exports = app;

@@ -1,4 +1,6 @@
-<div class="border border-primary burger-item">
-  {{burger_name}}
-  <button id="add-to-menu-burger" data-id="{{id}}">Add Back to Menu</button>
-</div>
+<form action="/api/burgers" method="PUT">
+  <div class="border border-primary burger-item">
+    {{burger_name}}
+    <input type="button" name="button" value="Add Back to Menu" data-id="{{id}}" id="add-to-menu-burger">
+  </div>
+</form>

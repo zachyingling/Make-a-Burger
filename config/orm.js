@@ -51,8 +51,6 @@ const orm = {
       "INSERT INTO " + tableInput + " (" + cols.toString() + ") VALUES (";
     queryString += valuesToStrings(vals) + ");";
 
-    console.log(queryString);
-
     connection.query(queryString, vals, (err, result) => {
       if (err) {
         throw err;

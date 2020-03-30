@@ -1,0 +1,36 @@
+<div class="container">
+  <img src="https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=200%2C200"
+    alt="Bacon Cheese Burger" id="burger-image">
+
+  <h1 id="burger-header">Make a Burger!</h1>
+</div>
+
+<div class="container" id="container-burgerlist">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="burgerlist-header">Burgers That Have Been Eaten!</h2>
+      {{#each burgers}}
+      {{!-- If devoured is equal to 1 it shows up here --}}
+      {{#if devoured}}
+      {{> burgers/burger-devoured}}
+      {{/if}}
+      {{/each}}
+    </div>
+    <div class="col-6">
+      <h2 class="burgerlist-header">Burgers Ready to Be Ate!</h2>
+      {{#each burgers}}
+      {{!-- If devoured is equal to 0 it shows up here --}}
+      {{#unless devoured}}
+      {{> burgers/burger-block}}
+      {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form action="/api/burgers" method="post">
+    <textarea name="burgername" id="burger-name-text" cols="30" rows="5"></textarea>
+    <input type="submit" value="Submit" id="burger-submit">
+  </form>
+</div>
