@@ -1,14 +1,18 @@
 const connection = require("../config/connection.js");
 
-const printQuestionMarks = num => {
-  var arr = [];
+function valuesToStrings(values) {
+  let tempString = "";
 
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
+  for (let i = 0; i < values.length; i++) {
+    if (i === values.length - 1) {
+      tempString += "'" + values[i] + "'";
+    } else {
+      tempString += "'" + values[i] + "',";
+    }
   }
 
-  return arr.toString();
-};
+  return tempString;
+}
 
 const objToSql = ob => {
   var arr = [];
@@ -44,8 +48,10 @@ const orm = {
   },
   insertOne: (tableInput, cols, vals, cb) => {
     let queryString =
-      "INSERT INTO " + tableInput + " (" + cols.toString + ") VALUES (";
-    queryString += printQuestionMarks(vals.length) + ");";
+      "INSERT INTO " + tableInput + " (" + cols.toString() + ") VALUES (";
+    queryString += valuesToStrings(vals) + ");";
+
+    console.log(queryString);
 
     connection.query(queryString, vals, (err, result) => {
       if (err) {
