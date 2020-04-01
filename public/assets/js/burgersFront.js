@@ -1,4 +1,11 @@
 $(document).ready(() => {
+  $("#burger-name-text").keydown(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+      this.form.submit();
+    }
+  });
+
   $(document).on("click", "#add-to-menu-burger", function(e) {
     e.preventDefault();
 
