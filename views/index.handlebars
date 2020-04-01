@@ -1,14 +1,18 @@
 <div class="container">
-  <img src="https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=200%2C200"
-    alt="Bacon Cheese Burger" id="burger-image">
+  <div class="row justify-content-center">
+    <img src="https://i2.wp.com/freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png?fit=200%2C200"
+      alt="Bacon Cheese Burger" id="burger-image">
+  </div>
 
-  <h1 id="burger-header">Make a Burger!</h1>
+  <div class="row justify-content-center mb-4">
+    <h1 class="text-danger" id="burger-header">Make a Burger!</h1>
+  </div>
 </div>
 
 <div class="container" id="container-burgerlist">
   <div class="row">
     <div class="col-6">
-      <h2 class="burgerlist-header">Burgers That Have Been Eaten!</h2>
+      <h2 class="burgerlist-header text-danger">Burgers That Have Been Eaten!</h2>
       {{#each burgers}}
       {{!-- If devoured is equal to 1 it shows up here --}}
       {{#if devoured}}
@@ -17,7 +21,7 @@
       {{/each}}
     </div>
     <div class="col-6">
-      <h2 class="burgerlist-header">Burgers Ready to Be Ate!</h2>
+      <h2 class="burgerlist-header text-danger">Burgers Ready to Be Ate!</h2>
       {{#each burgers}}
       {{!-- If devoured is equal to 0 it shows up here --}}
       {{#unless devoured}}
@@ -29,8 +33,10 @@
 </div>
 
 <div class="container">
-  <form action="/api/burgers" method="post">
-    <textarea name="burgername" id="burger-name-text" cols="30" rows="5" maxlength="100"></textarea>
-    <input type="submit" value="Submit" id="burger-submit">
-  </form>
+  <div class="row justify-content-left mt-5">
+    <form action="/api/burgers" method="post">
+      <textarea name="burgername" id="burger-name-text" cols="30" rows="5" maxlength="100"></textarea>
+      <input type="submit" value="Submit" class="btn btn-lg btn-primary ml-2 mb-5" id="burger-submit">
+    </form>
+  </div>
 </div>

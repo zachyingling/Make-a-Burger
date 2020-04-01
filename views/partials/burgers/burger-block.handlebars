@@ -1,6 +1,7 @@
 <form action="/api/burgers" method="PUT">
   <div class="border border-primary burger-item">
-    {{burger_name}}
-    <input type="button" name="button" value="Devour Burger" data-id="{{id}}" id="devour-burger">
+    <span class="burger-names text-danger font-weight-bold">{{burger_name}}</span>
+    <input type="button" name="button" value="Devour Burger" data-id="{{id}}" class="btn btn-primary"
+      id="devour-burger">
   </div>
 </form>
