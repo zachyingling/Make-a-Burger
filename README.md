@@ -12,6 +12,6 @@ This application lets you add different types of burgers to a database using a P
 - Express
 - MySQL
 
-#### Link
+### Link
 
 [Link](https://make-a-burger-zpy.herokuapp.com/ "Link")
