@@ -11,6 +11,7 @@ This application lets you add different types of burgers to a database using a P
 - Javascript
 - Express
 - MySQL
+- Heroku
 
 ### Link
 
